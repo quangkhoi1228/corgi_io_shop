@@ -1,0 +1,103 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  color: #fff;
+  font-size: 16px;
+  background:
+    url('https://marketplace-wine.vercel.app/assets/bg_color.png') center top no-repeat,
+    url('https://marketplace-wine.vercel.app/assets/bg_img.png') center top no-repeat;
+  background-size: cover, cover;
+  /* font-family: 'Bebas Neue', cursive; */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  overflow-x: hidden;
+  position: relative;
+}
+
+#root {
+  overflow-x: hidden;
+}
+
+.pc-475,
+.pc-768,
+.pc-1024 {
+  display: block;
+}
+
+.sp-475,
+.sp-768,
+.sp-1024 {
+  display: none;
+}
+
+.loadding {
+  width: 100%;
+  height: 100px;
+  background: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+@media screen and (max-width: 1340) {
+  body {
+    font-size: 14px;
+    background:
+      url('https://marketplace-wine.vercel.app/assets/bg_color.png') center top no-repeat,
+      url('https://marketplace-wine.vercel.app/assets/bg_img.png') center top no-repeat;
+    background-size: cover, 150% auto;
+  }
+
+  .pc-768 {
+    display: none;
+  }
+
+  .sp-768 {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .pc-1024 {
+    display: none;
+  }
+
+  .sp-1024 {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .pc-475 {
+    display: none;
+  }
+
+  .sp-475 {
+    display: block;
+  }
+}
