@@ -1,0 +1,312 @@
+@import "mixins"
+@import "ekko"
+$host: 'http://localhost:3000'
+
+
+
+
+$secondary: #3AAFEF
+
+$header-mobile-height: 3rem
+$section-max-width: 973px
+
+
+
+*
+    +animation
+.header-root
+    background: linear-gradient(to bottom, #081056, rgba(94, 34, 122, 0.92) 70%, rgba(191, 51, 135, 0.85))
+    margin-bottom: 4rem
+    position: relative
+    &::after
+        position: absolute
+        content: ""
+        top: 0
+        left: 50%
+        mix-blend-mode: overlay
+        background: url('#{$host}/assets/bg_header.png') center no-repeat
+        background-size: cover
+        width: 993px
+        height: 174px
+        transform: translateX(-50%)
+    & .buttonConnect
+        transition: all 0.2s ease
+        position: relative
+        padding: 1.25rem 0 0.75rem
+        cursor: pointer
+        z-index: 1
+        +touch
+            cursor: pointer
+            padding: 0.5rem 0 0
+            max-width: 125px
+            .buttonText
+                font-size: 20px
+        &:hover
+            opacity: 0.8
+
+
+    //   @media screen and (max-width: 1340px): 
+    +mobile
+        cursor: pointer
+        padding: 0.5rem 0 0
+        max-width: 125
+
+    .header-menu
+        position: relative
+        z-index: 1000
+        display: flex
+        justify-content: center
+        a
+            padding: 0.5rem 1rem
+            font-size: 1.25rem
+            &:hover,&.is-active
+                color: $secondary
+        &.is-mobile
+            display: none
+        +mobile
+            display: none
+            &.is-mobile
+                display: flex
+
+
+    & .buttonText
+        top: 50%
+        left: 50%
+        display: inline-block
+        position: absolute
+        font-size: 28px
+        transform: translate(-50%, -52%)
+        font-family: 'Bebas Neue', cursive
+        font-weight: 400
+        +mobile
+            font-size: 20px
+
+
+    & .addressWallet
+        padding: 2.6567rem 0
+
+
+    .header-container
+        max-width: 1305px
+        margin: auto 3%
+        display: flex
+        align-items: center
+        justify-content: space-between
+        // @media screen and (max-width: 1340px)
+        +mobile
+            padding: 0 3%
+            justify-content: space-between
+
+    .logo
+        text-align: center
+        margin-top: -9rem
+        position: relative
+        margin-bottom: 2rem
+        // @media screen and (max-width: 1340px)
+        //     display: none
+
+    .logoMobile
+        a, img
+            height: 5rem
+            +touch
+                height: 3rem
+
+
+
+    .text
+        font-size: 18
+        margin-right: 2vw
+        // @media screen and (max-width: 1340px)
+        //     display: none
+
+
+
+.section-title
+    position: relative
+    text-align: center
+    margin: 0 0 4rem 0
+    padding: 0.75rem
+    font-size: 3rem
+    text-transform: uppercase
+    font-family: 'Bebas Neue'
+    font-weight: 400
+    &::after
+        content: ""
+        position: absolute
+        width: 100%
+        max-width: $section-max-width
+        left: 50%
+        bottom: 0
+        height: 3px
+        background: linear-gradient(232deg, rgba(13, 133, 183, 0) 0%, #0D85B7 52.6%, rgba(13, 133, 183, 0) 100%)
+        transform: translateX(-50%)
+    >span
+        font-family: Montserrat
+        font-style: normal
+        font-weight: 500
+        font-size: 1rem
+        line-height: 29px
+        text-align: center
+        color: #C4C4C4
+        text-transform: initial
+        margin-left: 0.5rem
+        position: absolute
+        bottom: 25%
+
+
+.list
+    justify-content: space-between !important
+    max-width: $section-max-width
+    margin: auto
+
+.egg-item
+    width: 23%
+    text-align: center
+    padding-bottom: 3rem
+    +mobile
+        width: 47%
+    .egg-content
+        text-align: center
+        position: relative
+        .egg-background
+            height: 10rem
+            position: relative
+            z-index: 2
+            padding-bottom: 2rem
+            box-sizing: content-box
+            margin-bottom: 1.5rem
+            object-fit: contain
+            &.is-wind, &.is-water
+                height: 11rem
+                margin-bottom: 0.5rem
+        .egg-counter
+            position: absolute
+            top: calc(10rem - 2rem)
+            z-index: 1
+            height: 7rem
+            transform: translateX(-50%)
+            left: 50%
+            object-fit: contain
+        .shop-price
+            font-family: Montserrat
+            font-style: normal
+            font-weight: bold
+            font-size: 2rem
+            line-height: 2rem
+            text-align: center
+            color: #FFFFFF
+            margin-bottom: 1.5rem
+        .shop-buy-button
+            position: relative
+            span
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                font-family: Bebas Neue
+                font-style: normal
+                font-weight: normal
+                font-size: 2rem
+                line-height: 38px
+                text-transform: uppercase
+                color: #FFFFFF
+                padding-bottom: 0.5rem
+
+.combo-egg-section
+    .egg-list
+        justify-content: center !important
+        .egg-item
+            margin: 0 2rem
+            .egg-background
+                height: 15rem
+                margin-bottom: 0
+                padding-bottom: 0.25rem
+            .egg-combo-description
+                font-family: Montserrat
+                font-style: normal
+                font-weight: 500
+                font-size: 24px
+                line-height: 29px
+                text-align: center
+                color: #C4C4C4
+                margin-bottom: 0.5rem
+            +mobile
+                margin: 0
+
+
+
+
+.item-item
+    width: 23%
+    text-align: center
+    padding-bottom: 3rem
+    +mobile
+        width: 47%
+    .item-content
+        text-align: center
+        position: relative
+        .item-background
+            height: 10rem
+            position: relative
+            z-index: 2
+            padding-bottom: 2rem
+            box-sizing: content-box
+            margin-bottom: 1.5rem
+            object-fit: contain
+            &.is-wind, &.is-water
+                height: 11rem
+                margin-bottom: 0.5rem
+        .item-counter
+            position: absolute
+            top: calc(10rem - 2rem)
+            z-index: 1
+            height: 7rem
+            transform: translateX(-50%)
+            left: 50%
+            object-fit: contain
+        .shop-price
+            font-family: Montserrat
+            font-style: normal
+            font-weight: bold
+            font-size: 2rem
+            line-height: 2rem
+            text-align: center
+            color: #FFFFFF
+            margin-bottom: 1.5rem
+        .shop-buy-button
+            position: relative
+            span
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                font-family: Bebas Neue
+                font-style: normal
+                font-weight: normal
+                font-size: 2rem
+                line-height: 38px
+                text-transform: uppercase
+                color: #FFFFFF
+                padding-bottom: 0.5rem
+
+.combo-item-section
+    .item-list
+        justify-content: center !important
+        .item-item
+            margin: 0 2rem
+            .item-background
+                height: 15rem
+                margin-bottom: 0
+                padding-bottom: 0.25rem
+            .item-combo-description
+                font-family: Montserrat
+                font-style: normal
+                font-weight: 500
+                font-size: 24px
+                line-height: 29px
+                text-align: center
+                color: #C4C4C4
+                margin-bottom: 0.5rem
+            +mobile
+                margin: 0
+

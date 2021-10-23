@@ -6,12 +6,12 @@ const Footer: React.FC = () => {
   const classes = useStyles();
   return (
     <footer className={`${classes.root}`}>
-      <p className={`${classes.footerBG}`}>
+      <p className="footer-background">
         <img src="https://marketplace-wine.vercel.app/assets/bg_footer.svg" alt="bgfooter" />
-        <BannerSpine
+        {/* <BannerSpine
           link="https://marketplace-wine.vercel.app/animation/banner/banner.json"
           name="banner"
-        ></BannerSpine>
+        ></BannerSpine> */}
       </p>
       <div className={`${classes.container}`}>
         <div className={`${classes.content}`}>
