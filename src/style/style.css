@@ -23,12 +23,14 @@
 }
 
 .header-root::after {
-  position: absolute;
+  position: fixed;
   content: "";
   top: 0;
   left: 50%;
   mix-blend-mode: overlay;
-  background: url("https://corgi-io-shop.vercel.app/assets/bg_header.png") center no-repeat;
+  background-image: url(assets/bg_header.png);
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
   width: 993px;
   height: 174px;

@@ -1,8 +1,5 @@
 @import "mixins"
 @import "ekko"
-// $host: 'http://localhost:3000'
-$host: 'https://corgi-io-shop.vercel.app'
-
 
 
 
@@ -20,12 +17,14 @@ $section-max-width: 973px
     margin-bottom: 4rem
     position: relative
     &::after
-        position: absolute
+        position: fixed
         content: ""
         top: 0
         left: 50%
         mix-blend-mode: overlay
-        background: url('#{$host}/assets/bg_header.png') center no-repeat
+        background-image:  url(assets/bg_header.png)
+        background-position:  center
+        background-repeat:  no-repeat
         background-size: cover
         width: 993px
         height: 174px
