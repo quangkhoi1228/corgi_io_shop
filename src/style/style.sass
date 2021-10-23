@@ -361,6 +361,9 @@ canvas
             text-align: center
             text-transform: uppercase
             color: #FFFFFF
+            +mobile
+                font-size: 1rem
+                margin-bottom: 0.5rem
 .item-attribute-description
     display: flex
     justify-content: space-between
@@ -374,5 +377,29 @@ canvas
         color: #FFFFFF
         +responsive
             font-size: 0.75rem
-        +mobile 
+        +mobile
             font-size: 0.75rem
+.hatch-container
+    position: absolute
+    width: 100%
+    top: 4rem
+    z-index: 10
+    .hatch-button
+        position: relative
+        &:hover
+            filter: brightness(1.25)
+            z-index: 10
+            opacity: 1
+        span
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            font-family: Bebas Neue
+            font-style: normal
+            font-weight: normal
+            font-size: 1.75rem
+            line-height: 38px
+            text-transform: uppercase
+            color: #FFFFFF
+            padding-bottom: 0.5rem

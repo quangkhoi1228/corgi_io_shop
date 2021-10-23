@@ -129,7 +129,7 @@ const Inventory: React.FC = () => {
 
     return (
       <div className={`${classes.listItemInfor} item-item`} key={el.id}>
-        <Link to={`${itemCate}${el.id}`} className="detail"></Link>
+        {/* <Link to={`${itemCate}${el.id}`} className="detail"></Link> */}
         <p className={`${classes.itemBackGround}`}>
           <img src="https://marketplace-wine.vercel.app/assets/bg_item.png" alt="background item" />
         </p>
@@ -191,12 +191,14 @@ const Inventory: React.FC = () => {
   const handleRenderSingleEggItem = (el: any) => {
     let infoClass = "";
     if (typeof el !== "undefined") {
-      infoClass = el.split('_')[0].toLowerCase();
+      infoClass = el.split("_")[0].toLowerCase();
     }
 
     const onClick = function () {
-      handleBuySingleEggOnClick(el);
+      handleHatchSingleEggOnClick(el);
     };
+
+    let hatch = infoClass === "water";
 
     return (
       <div className="list-item egg-item" key={el}>
@@ -206,6 +208,12 @@ const Inventory: React.FC = () => {
             src={`./assets/egg-background-${infoClass}.png`}
             alt="egg-background"
           />
+          <div className={`hatch-container ${hatch ? "" : "is-hidden"}`}>
+            <p className="button hatch-button" onClick={onClick}>
+              <img src="./assets/shop-buy-background-yellow.png" alt="button" />
+              <span>HATCH NOW</span>
+            </p>
+          </div>
           <img className="egg-counter" src="./assets/egg-counter.png" alt="egg-counter" />
           {/* <div className="shop-price">100 COR</div>
           <p className="button shop-buy-button" onClick={onClick}>
@@ -259,7 +267,7 @@ const Inventory: React.FC = () => {
     );
   };
 
-  const handleBuySingleEggOnClick = (el: any) => {
+  const handleHatchSingleEggOnClick = (el: any) => {
     // axios
     //   .get(`https://dev-coin.yangyinhouse.com/api/v1/market${itemCate}`, { params })
     //   .then(function (response) {
@@ -269,7 +277,7 @@ const Inventory: React.FC = () => {
     //     console.log(error);
     //   });
     console.log(el);
-    alert(`buy single ${el} egg`);
+    alert(`hatch single ${el} egg`);
   };
 
   const handleBuyComboEggOnClick = (el: any) => {

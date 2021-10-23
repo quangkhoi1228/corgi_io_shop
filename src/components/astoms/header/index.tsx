@@ -20,19 +20,25 @@ const Header: React.FC = () => {
             <NavLink to="/" activeClassName="is-active" exact>
               SHOP
             </NavLink>
-            <NavLink to="/inventory" activeClassName="is-active" >
+            <NavLink to="/inventory" activeClassName="is-active">
               INVENTORY
             </NavLink>
-            <NavLink to="/battle" activeClassName="is-active" >
+            <NavLink to="/battle" activeClassName="is-active">
               BATTLE
             </NavLink>
           </div>
           <ConnectWallet></ConnectWallet>
         </div>
         <div className="header-menu is-mobile">
-          <NavLink to="/">SHOP</NavLink>
-          <NavLink to="/inventory">INVENTORY</NavLink>
-          <NavLink to="/battle">BATTLE</NavLink>
+          <NavLink to="/" activeClassName="is-active" exact>
+            SHOP
+          </NavLink>
+          <NavLink to="/inventory" activeClassName="is-active">
+            INVENTORY
+          </NavLink>
+          <NavLink to="/battle" activeClassName="is-active">
+            BATTLE
+          </NavLink>
         </div>
       </div>
       {/* <p className={`${classes.logo}`}><NavLink to="/"><img src="https://marketplace-wine.vercel.app/assets/logo.png" alt="logo" /></NavLink></p> */}
