@@ -277,9 +277,9 @@ const Home: React.FC = () => {
         </div>
         <div className={`${classes.content}`}>
           <div className={`${classes.contentLeft}`}>
-            <div className={`${classes.listItem}`}>
-              {dataItem.data.map((el: any) => handleRenderItem(el))}
-            </div>
+              <div className={`${classes.listItem}`}>
+                {dataItem.data.map((el: any) => handleRenderItem(el))}
+              </div>
             { dataItem.meta.totalPage - 1  >= (typeof pagi === 'undefined' ? 0 : parseInt(pagi)) ? (
               <ul className={`${classes.pagination}`}>
                 <li className="pagiItem" onClick={(event) => setPagi('0')}>

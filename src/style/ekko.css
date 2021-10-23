@@ -5,4 +5,8 @@
 .button:hover {
   opacity: 0.8;
 }
+
+.is-hidden {
+  display: none !important;
+}
 /*# sourceMappingURL=ekko.css.map */

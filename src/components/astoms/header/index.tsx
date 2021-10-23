@@ -17,9 +17,15 @@ const Header: React.FC = () => {
             </NavLink>
           </p>
           <div className="header-menu">
-            <NavLink to="/" activeClassName="is-active" >SHOP</NavLink>
-            <NavLink to="/inventory">INVENTORY</NavLink>
-            <NavLink to="/battle">BATTLE</NavLink>
+            <NavLink to="/" activeClassName="is-active" exact>
+              SHOP
+            </NavLink>
+            <NavLink to="/inventory" activeClassName="is-active" >
+              INVENTORY
+            </NavLink>
+            <NavLink to="/battle" activeClassName="is-active" >
+              BATTLE
+            </NavLink>
           </div>
           <ConnectWallet></ConnectWallet>
         </div>

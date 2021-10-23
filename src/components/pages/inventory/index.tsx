@@ -8,7 +8,7 @@ import BannerSpine from "components/astoms/banner/BannerSpine";
 type urlParams = {
   id: string;
 };
-const Home: React.FC = () => {
+const Inventory: React.FC = () => {
   const addressOwn = "0x7972d53c50aacb0e39ff98a5351f04631bffbeac";
   const url = `http://dev-coin.yangyinhouse.com`;
   const classes = useStyles();
@@ -18,7 +18,7 @@ const Home: React.FC = () => {
     shortBy: "",
     orderBy: "",
   });
-  const [itemCate, setItemCate] = useState("/pets/");
+  const [itemCate, setItemCate] = useState("/items/");
   const [filterRange, setFilterRange] = useState<number[]>([3000, 6000]);
 
   const [filterParams, setFilterParams] = useState({
@@ -37,10 +37,23 @@ const Home: React.FC = () => {
       totalPage: 0,
     },
   });
-  const [dataSingleEggItem, setDataSingleEggItem] = useState(["Fire", "Wind", "Earth", "Water"]);
+  const [dataSingleEggItem, setDataSingleEggItem] = useState([
+    "Fire_1",
+    "Wind_1",
+    "Earth_1",
+    "Water_1",
+    "Fire_2",
+    "Wind_2",
+    "Wind_3",
+    "Earth_2",
+    "Wind_4",
+    "Earth_3",
+    "Wind_5",
+    "Earth_4",
+  ]);
   const [dataComboEggItem, setDataComboEggItem] = useState([3, 5, 10]);
   const [dataComboItemItem, setDataComboItemItem] = useState([1, 5, 10]);
-
+  const [tabItem, setTabItem] = useState("pets");
   const params = {
     size: 12,
     page: pagi,
@@ -51,6 +64,11 @@ const Home: React.FC = () => {
     star: filterParams.star !== "" ? parseInt(filterParams.star) : "",
     min_price: filterParams.min_price !== "" ? parseInt(filterParams.min_price) : "",
     max_price: filterParams.max_price !== "" ? parseInt(filterParams.max_price) : "",
+  };
+
+  const handleChangeTab = (event: any) => {
+    var element = event.target.closest(".button");
+    setTabItem(element.dataset.tab);
   };
   const handleChangeFilterRange = (event: any, newValue: number | number[]) => {
     setFilterRange(newValue as number[]);
@@ -110,7 +128,7 @@ const Home: React.FC = () => {
     }
 
     return (
-      <div className={`${classes.listItemInfor}`} key={el}>
+      <div className={`${classes.listItemInfor} item-item`} key={el.id}>
         <Link to={`${itemCate}${el.id}`} className="detail"></Link>
         <p className={`${classes.itemBackGround}`}>
           <img src="https://marketplace-wine.vercel.app/assets/bg_item.png" alt="background item" />
@@ -156,16 +174,14 @@ const Home: React.FC = () => {
           </div>
           <div className={`${classes.itemDescription} ${typeof el.class === "undefined" ? "noclass" : ""}`}>
             <ul className={`${classes.itemDesStar}`}>{handleRenderStar(el.star)}</ul>
-            <p className={`${classes.itemDesPrice}`}>
-              {el.price}
-              <span>COR</span>
-            </p>
-            <p className={`${classes.itemDesName}`}>
-              Owner:
-              <a href="https://bscscan.com/address/0x7972d53c50aacb0e39ff98a5351f04631bffbeac" target="_blank">
-                {addressOwn.slice(0, 7) + "..."}
-              </a>
-            </p>
+            <div className="item-attribute-description">
+              <div className="attribute-left">HP: 10</div>
+              <div className="attribute-right">Defend: 20</div>
+            </div>
+            <div className="item-attribute-description">
+              <div className="attribute-left">Attack: 10</div>
+              <div className="attribute-right">Level: 10</div>
+            </div>
           </div>
         </div>
       </div>
@@ -175,7 +191,7 @@ const Home: React.FC = () => {
   const handleRenderSingleEggItem = (el: any) => {
     let infoClass = "";
     if (typeof el !== "undefined") {
-      infoClass = el.toLowerCase();
+      infoClass = el.split('_')[0].toLowerCase();
     }
 
     const onClick = function () {
@@ -191,11 +207,11 @@ const Home: React.FC = () => {
             alt="egg-background"
           />
           <img className="egg-counter" src="./assets/egg-counter.png" alt="egg-counter" />
-          <div className="shop-price">100 COR</div>
-          <p className="button shop-buy-button"  onClick={onClick}>
+          {/* <div className="shop-price">100 COR</div>
+          <p className="button shop-buy-button" onClick={onClick}>
             <img src="./assets/shop-buy-background-yellow.png" alt="button" />
             <span>BUY</span>
-          </p>
+          </p> */}
         </div>
       </div>
     );
@@ -213,7 +229,7 @@ const Home: React.FC = () => {
           <img className="egg-background " src={`./assets/combo-egg-${combo}.png`} alt="egg-background" />
           <p className="egg-combo-description">{combo} Eggs (random)</p>
           <div className="shop-price">100 COR</div>
-          <p className="button shop-buy-button"  onClick={onClick}>
+          <p className="button shop-buy-button" onClick={onClick}>
             <img src="./assets/shop-buy-background-yellow.png" alt="button" />
             <span>BUY</span>
           </p>
@@ -234,7 +250,7 @@ const Home: React.FC = () => {
           <img className="item-background " src={`./assets/combo-item-${combo}.png`} alt="item-background" />
           <p className="item-combo-description">{combo} Eggs (random)</p>
           <div className="shop-price">100 COR</div>
-          <p className="button shop-buy-button"  onClick={onClick}>
+          <p className="button shop-buy-button" onClick={onClick}>
             <img src="./assets/shop-buy-background-yellow.png" alt="button" />
             <span>BUY</span>
           </p>
@@ -344,31 +360,39 @@ const Home: React.FC = () => {
 
   return (
     <div className={`${classes.root}`}>
-      <div className={`${classes.container}`}>
-        <section className="single-egg-section">
+      <div className={`${classes.container} `}>
+        <section className="tab-section">
+          <a className="button" data-tab="pets" onClick={handleChangeTab}>
+            <img
+              src={`/assets/button-background-${tabItem === "pets" ? "blue" : "purple"}.png`}
+              alt="button-background"
+            />
+            <span>Pets</span>{" "}
+          </a>
+          <a className="button" data-tab="items" onClick={handleChangeTab}>
+            <img
+              src={`/assets/button-background-${tabItem === "items" ? "blue" : "purple"}.png`}
+              alt="button-background"
+            />
+            <span>Items</span>
+          </a>
+        </section>
+        <section className={`single-egg-section  ${tabItem === "pets" ? "" : "is-hidden"}`}>
           <p className="section-title">Eggs</p>
-          <div className={`${classes.listItem} list egg-list`}>
+          <div className={`${classes.listItem} list egg-list is-large`}>
             {dataSingleEggItem.map((el: any) => handleRenderSingleEggItem(el))}
           </div>
         </section>
-        <section className="combo-egg-section">
-          <div className={`${classes.listItem} list egg-list`}>
-            {dataComboEggItem.map((el: any) => handleRenderComboEggItem(el))}
+
+        <section className={`items-section ${tabItem === "items" ? "" : "is-hidden"}`}>
+          <p className="section-title">Items</p>
+          <div className={`${classes.listItem} list item-list is-large`}>
+            {dataItem.data.map((el: any) => handleRenderItem(el))}
           </div>
-        </section>
-        <section className="items-section">
-          <p className="section-title">
-            Items<span>random</span>
-          </p>
-          <section className="combo-item-section">
-            <div className={`${classes.listItem} list item-list`}>
-              {dataComboItemItem.map((el: any) => handleRenderComboItemItem(el))}
-            </div>
-          </section>
         </section>
       </div>
     </div>
   );
 };
 
-export default Home;
+export default Inventory;

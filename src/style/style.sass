@@ -158,7 +158,27 @@ $section-max-width: 973px
     justify-content: space-between !important
     max-width: $section-max-width
     margin: auto
-
+    &.is-large
+        max-width: 100%
+        .egg-item, .item-item
+            width: 16%
+            margin-right: 0
+        .egg-item
+            +responsive
+                width: 30%
+            +mobile
+                width: 47%
+        .item-item
+            +responsive
+                width: 170px
+            +mobile
+                width: 170px
+            .detail
+                left: 0
+    +responsive
+        justify-content: center !important
+    +mobile
+        justify-content: center !important
 .egg-item
     width: 23%
     text-align: center
@@ -239,7 +259,7 @@ $section-max-width: 973px
 .item-item
     width: 23%
     text-align: center
-    padding-bottom: 3rem
+    margin-bottom: 3rem
     +mobile
         width: 47%
     .item-content
@@ -310,3 +330,49 @@ $section-max-width: 973px
             +mobile
                 margin: 0
 
+.footer-background
+    position: relative
+canvas
+    position: absolute
+    top: 0
+    left: 0
+
+
+.tab-section
+    display: flex
+    justify-content: center
+    margin-bottom: 1rem
+    .button
+        position: relative
+        margin: 0 0.75rem
+        >span
+            position: absolute
+            left: 50%
+            top: 50%
+            transform: translate(-50%,-50%)
+            padding-bottom: 0.5rem
+            font-family: Bebas Neue
+            font-style: normal
+            font-weight: normal
+            font-size: 26px
+            line-height: 31px
+            display: flex
+            align-items: center
+            text-align: center
+            text-transform: uppercase
+            color: #FFFFFF
+.item-attribute-description
+    display: flex
+    justify-content: space-between
+    > div
+        font-family: Montserrat
+        font-style: normal
+        font-weight: bold
+        font-size: 1rem
+        line-height: 20px
+        margin: 0 5px
+        color: #FFFFFF
+        +responsive
+            font-size: 0.75rem
+        +mobile 
+            font-size: 0.75rem
