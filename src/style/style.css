@@ -28,7 +28,7 @@
   top: 0;
   left: 50%;
   mix-blend-mode: overlay;
-  background: url("http://localhost:3000/assets/bg_header.png") center no-repeat;
+  background: url("https://corgi-io-shop.vercel.app/assets/bg_header.png") center no-repeat;
   background-size: cover;
   width: 993px;
   height: 174px;
