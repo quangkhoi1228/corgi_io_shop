@@ -64,7 +64,6 @@ const BannerSpineEgg = (props: IProps) => {
       setSizeScreen(window.innerWidth);
     };
   }, [sizeScreen]);
-  console.log(sizeScreen);
 
   let widthScreenWidth = 973;
   let boxWidth = sizeScreen > 769 ? widthScreenWidth * 0.23 : sizeScreen * 0.47;
