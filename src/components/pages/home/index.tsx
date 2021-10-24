@@ -178,14 +178,27 @@ const Home: React.FC = () => {
       infoClass = el.toLowerCase();
     }
 
-    let mappingClass: { [key: string]: string } = {
-      fire: "fire",
-      wind: "air",
-      earth: "rock",
-      water: "water",
+    let mappingClass: { [key: string]: { [key: string]: string } } = {
+      fire: {
+        folder: "Air",
+        name: "Air",
+      },
+      wind: {
+        folder: "Fire",
+        name: "Fire",
+      },
+      earth: {
+        folder: "rock",
+        name: "Rock",
+      },
+      water: {
+        folder: "water",
+        name: "water",
+      },
     };
+    var animationFolder = mappingClass[infoClass]["folder"];
 
-    var animationName = mappingClass[infoClass];
+    var animationName = mappingClass[infoClass]["name"];
 
     const onClick = function () {
       handleBuySingleEggOnClick(el);
@@ -201,7 +214,7 @@ const Home: React.FC = () => {
           />
           <img className="egg-counter" src="./assets/egg-counter.png" alt="egg-counter" />
           <BannerSpineEgg
-            link={`./animation/egganimation/${animationName}/${animationName}.json`}
+            link={`./animation/egganimation/${animationFolder}/${animationName}.json`}
             name="banner"
           ></BannerSpineEgg>
           <div className="shop-price">100 COR</div>
