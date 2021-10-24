@@ -180,12 +180,12 @@ const Home: React.FC = () => {
 
     let mappingClass: { [key: string]: { [key: string]: string } } = {
       fire: {
-        folder: "Air",
-        name: "Air",
-      },
-      wind: {
         folder: "Fire",
         name: "Fire",
+      },
+      wind: {
+        folder: "Air",
+        name: "Air",
       },
       earth: {
         folder: "rock",
