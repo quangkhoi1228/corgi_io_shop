@@ -4,7 +4,6 @@ import useStyles from "./styles";
 import { Slider } from "@material-ui/core";
 import { useParams } from "react-router";
 import axios from "axios";
-import BannerSpine from "components/astoms/banner/BannerSpineEgg";
 import BannerSpineEgg from "components/astoms/banner/BannerSpineEgg";
 type urlParams = {
   id: string;
@@ -140,10 +139,10 @@ const Home: React.FC = () => {
           <p className={`${classes.itemID}`}>{el.id}</p>
           <div className={`${classes.itemFocusItem}`}>
             {typeof el.class !== "undefined" ? (
-              <BannerSpine
+              <BannerSpineEgg
                 link={`https://marketplace-wine.vercel.app/animation/${infoClass}/${infoClass}.json`}
                 name="banner"
-              ></BannerSpine>
+              ></BannerSpineEgg>
             ) : (
               // <p className={`${classes.itemCricle}`}><img src={`https://marketplace-wine.vercel.app/assets/circle_${el.class.toLowerCase()}.png`} alt={`${el.class.toLowerCase()} cricle`} /></p>
               <p>
@@ -186,7 +185,7 @@ const Home: React.FC = () => {
       water: "water",
     };
 
-    var animationName = mappingClass.hasOwnProperty(infoClass) ? mappingClass[infoClass] : "";
+    var animationName = mappingClass[infoClass];
 
     const onClick = function () {
       handleBuySingleEggOnClick(el);
@@ -202,7 +201,7 @@ const Home: React.FC = () => {
           />
           <img className="egg-counter" src="./assets/egg-counter.png" alt="egg-counter" />
           <BannerSpineEgg
-            link={`/animation/egg_animation/${animationName}/${animationName}.json`}
+            link={`./animation/egg_animation/${animationName}/${animationName}.json`}
             name="banner"
           ></BannerSpineEgg>
           <div className="shop-price">100 COR</div>
