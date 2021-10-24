@@ -67,7 +67,7 @@ const BannerSpineEgg = (props: IProps) => {
 
   let widthScreenWidth = 973;
   let boxWidth = sizeScreen > 769 ? widthScreenWidth * 0.23 : sizeScreen * 0.47;
-  let boxHeight = sizeScreen > 769 ? 330 : 400;
+  let boxHeight = sizeScreen > 769 ? 200 : 200;
   let scale = sizeScreen > 769 ? 0.8 : 0.8;
   let imageMarginLeft = sizeScreen > 769 ? (sizeScreen > 1024 ? boxWidth / 2.1 + 10 : boxWidth / 2.1 -5) : boxWidth / 2.1;
   let imageMarginTop = sizeScreen > 769 ? 85 : 80;
