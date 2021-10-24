@@ -214,7 +214,7 @@ const Home: React.FC = () => {
           />
           <img className="egg-counter" src="./assets/egg-counter.png" alt="egg-counter" />
           <BannerSpineEgg
-            link={`./animation/egganimation/${animationFolder}/${animationName}.json`}
+            link={`./animation/egg_animation/${animationFolder}/${animationName}.json`}
             name="banner"
           ></BannerSpineEgg>
           <div className="shop-price">100 COR</div>
