@@ -4,7 +4,8 @@ import useStyles from "./styles";
 import { Slider } from "@material-ui/core";
 import { useParams } from "react-router";
 import axios from "axios";
-import BannerSpine from "components/astoms/banner/BannerSpine";
+import BannerSpine from "components/astoms/banner/BannerSpineEgg";
+import BannerSpineEgg from "components/astoms/banner/BannerSpineEgg";
 type urlParams = {
   id: string;
 };
@@ -178,6 +179,15 @@ const Home: React.FC = () => {
       infoClass = el.toLowerCase();
     }
 
+    let mappingClass: { [key: string]: string } = {
+      fire: "fire",
+      wind: "air",
+      earth: "rock",
+      water: "water",
+    };
+
+    var animationName = mappingClass.hasOwnProperty(infoClass) ? mappingClass[infoClass] : "";
+
     const onClick = function () {
       handleBuySingleEggOnClick(el);
     };
@@ -186,13 +196,17 @@ const Home: React.FC = () => {
       <div className="list-item egg-item" key={el}>
         <div className="egg-content">
           <img
-            className={`egg-background  is-${infoClass}`}
+            className={`egg-background is-invisible is-${infoClass}`}
             src={`./assets/egg-background-${infoClass}.png`}
             alt="egg-background"
           />
           <img className="egg-counter" src="./assets/egg-counter.png" alt="egg-counter" />
+          <BannerSpineEgg
+            link={`/animation/egg_animation/${animationName}/${animationName}.json`}
+            name="banner"
+          ></BannerSpineEgg>
           <div className="shop-price">100 COR</div>
-          <p className="button shop-buy-button"  onClick={onClick}>
+          <p className="button shop-buy-button" onClick={onClick}>
             <img src="./assets/shop-buy-background-yellow.png" alt="button" />
             <span>BUY</span>
           </p>
@@ -213,7 +227,7 @@ const Home: React.FC = () => {
           <img className="egg-background " src={`./assets/combo-egg-${combo}.png`} alt="egg-background" />
           <p className="egg-combo-description">{combo} Eggs (random)</p>
           <div className="shop-price">100 COR</div>
-          <p className="button shop-buy-button"  onClick={onClick}>
+          <p className="button shop-buy-button" onClick={onClick}>
             <img src="./assets/shop-buy-background-yellow.png" alt="button" />
             <span>BUY</span>
           </p>
@@ -234,7 +248,7 @@ const Home: React.FC = () => {
           <img className="item-background " src={`./assets/combo-item-${combo}.png`} alt="item-background" />
           <p className="item-combo-description">{combo} Eggs (random)</p>
           <div className="shop-price">100 COR</div>
-          <p className="button shop-buy-button"  onClick={onClick}>
+          <p className="button shop-buy-button" onClick={onClick}>
             <img src="./assets/shop-buy-background-yellow.png" alt="button" />
             <span>BUY</span>
           </p>

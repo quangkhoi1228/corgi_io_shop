@@ -9,6 +9,10 @@
   display: none !important;
 }
 
+.is-invisible {
+  visibility: hidden;
+}
+
 * {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -465,10 +469,14 @@ canvas {
 }
 
 .hatch-container {
+  display: none;
   position: absolute;
   width: 100%;
   top: 4rem;
   z-index: 10;
+}
+.egg-item:hover .hatch-container {
+  display: block;
 }
 .hatch-container .hatch-button {
   position: relative;

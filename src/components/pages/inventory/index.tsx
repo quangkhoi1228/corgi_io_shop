@@ -208,7 +208,7 @@ const Inventory: React.FC = () => {
             src={`./assets/egg-background-${infoClass}.png`}
             alt="egg-background"
           />
-          <div className={`hatch-container ${hatch ? "" : "is-hidden"}`}>
+          <div className={`hatch-container`}>
             <p className="button hatch-button" onClick={onClick}>
               <img src="./assets/shop-buy-background-yellow.png" alt="button" />
               <span>HATCH NOW</span>

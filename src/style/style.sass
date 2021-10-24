@@ -1,14 +1,9 @@
 @import "mixins"
 @import "ekko"
 
-
-
 $secondary: #3AAFEF
-
 $header-mobile-height: 3rem
 $section-max-width: 973px
-
-
 
 *
     +animation
@@ -380,10 +375,13 @@ canvas
         +mobile
             font-size: 0.75rem
 .hatch-container
+    display: none
     position: absolute
     width: 100%
     top: 4rem
     z-index: 10
+    .egg-item:hover &
+        display: block
     .hatch-button
         position: relative
         &:hover

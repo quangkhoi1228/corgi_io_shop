@@ -1,0 +1,118 @@
+
+Rock.png
+size: 3658,580
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+0002 shot
+  rotate: false
+  xy: 460, 291
+  size: 455, 287
+  orig: 654, 654
+  offset: 100, 131
+  index: -1
+0000 shot
+  rotate: false
+  xy: 460, 291
+  size: 455, 287
+  orig: 654, 654
+  offset: 100, 131
+  index: -1
+0004 shot
+  rotate: false
+  xy: 460, 2
+  size: 455, 287
+  orig: 654, 654
+  offset: 100, 131
+  index: -1
+0006 shot
+  rotate: false
+  xy: 917, 291
+  size: 455, 287
+  orig: 654, 654
+  offset: 100, 131
+  index: -1
+0008 shot
+  rotate: false
+  xy: 917, 2
+  size: 455, 287
+  orig: 654, 654
+  offset: 100, 131
+  index: -1
+0010 shot
+  rotate: false
+  xy: 1374, 291
+  size: 455, 287
+  orig: 654, 654
+  offset: 100, 131
+  index: -1
+0012 shot
+  rotate: false
+  xy: 1831, 292
+  size: 455, 286
+  orig: 654, 654
+  offset: 100, 132
+  index: -1
+0014 shot
+  rotate: false
+  xy: 1831, 4
+  size: 455, 286
+  orig: 654, 654
+  offset: 100, 132
+  index: -1
+0016 shot
+  rotate: false
+  xy: 2288, 292
+  size: 455, 286
+  orig: 654, 654
+  offset: 100, 132
+  index: -1
+0018 shot
+  rotate: false
+  xy: 2288, 4
+  size: 455, 286
+  orig: 654, 654
+  offset: 100, 132
+  index: -1
+0020 shot
+  rotate: false
+  xy: 2745, 292
+  size: 455, 286
+  orig: 654, 654
+  offset: 100, 132
+  index: -1
+0022 shot
+  rotate: false
+  xy: 2, 291
+  size: 456, 287
+  orig: 654, 654
+  offset: 100, 131
+  index: -1
+0024 shot
+  rotate: false
+  xy: 2, 2
+  size: 456, 287
+  orig: 654, 654
+  offset: 100, 131
+  index: -1
+0026 shot
+  rotate: false
+  xy: 2745, 3
+  size: 454, 287
+  orig: 654, 654
+  offset: 102, 131
+  index: -1
+0028 shot
+  rotate: false
+  xy: 3202, 291
+  size: 454, 287
+  orig: 654, 654
+  offset: 102, 131
+  index: -1
+0030 shot
+  rotate: false
+  xy: 1374, 2
+  size: 455, 287
+  orig: 654, 654
+  offset: 101, 131
+  index: -1

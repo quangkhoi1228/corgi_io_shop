@@ -1,0 +1,153 @@
+
+Air.png
+size: 3004,851
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+0002 shot
+  rotate: false
+  xy: 2, 273
+  size: 431, 282
+  orig: 654, 654
+  offset: 113, 138
+  index: -1
+0000 shot
+  rotate: false
+  xy: 2, 273
+  size: 431, 282
+  orig: 654, 654
+  offset: 113, 138
+  index: -1
+0004 shot
+  rotate: false
+  xy: 435, 283
+  size: 430, 279
+  orig: 654, 654
+  offset: 113, 141
+  index: -1
+0006 shot
+  rotate: false
+  xy: 858, 570
+  size: 428, 279
+  orig: 654, 654
+  offset: 114, 141
+  index: -1
+0008 shot
+  rotate: false
+  xy: 435, 2
+  size: 428, 279
+  orig: 654, 654
+  offset: 114, 141
+  index: -1
+0010 shot
+  rotate: false
+  xy: 865, 2
+  size: 428, 279
+  orig: 654, 654
+  offset: 114, 141
+  index: -1
+0012 shot
+  rotate: false
+  xy: 1295, 8
+  size: 427, 279
+  orig: 654, 654
+  offset: 114, 141
+  index: -1
+0014 shot
+  rotate: false
+  xy: 1726, 289
+  size: 425, 279
+  orig: 654, 654
+  offset: 115, 141
+  index: -1
+0016 shot
+  rotate: false
+  xy: 2153, 10
+  size: 423, 279
+  orig: 654, 654
+  offset: 116, 141
+  index: -1
+0018 shot
+  rotate: false
+  xy: 2580, 292
+  size: 418, 277
+  orig: 654, 654
+  offset: 121, 143
+  index: -1
+0020 shot
+  rotate: false
+  xy: 433, 564
+  size: 423, 285
+  orig: 654, 654
+  offset: 116, 141
+  index: -1
+0022 shot
+  rotate: false
+  xy: 2, 557
+  size: 429, 292
+  orig: 654, 654
+  offset: 113, 141
+  index: -1
+0024 shot
+  rotate: false
+  xy: 1297, 289
+  size: 427, 279
+  orig: 654, 654
+  offset: 115, 141
+  index: -1
+0026 shot
+  rotate: false
+  xy: 2147, 571
+  size: 426, 278
+  orig: 654, 654
+  offset: 115, 142
+  index: -1
+0028 shot
+  rotate: false
+  xy: 2153, 291
+  size: 425, 278
+  orig: 654, 654
+  offset: 116, 142
+  index: -1
+0030 shot
+  rotate: false
+  xy: 2578, 11
+  size: 424, 278
+  orig: 654, 654
+  offset: 116, 142
+  index: -1
+0032 shot
+  rotate: false
+  xy: 2575, 571
+  size: 426, 278
+  orig: 654, 654
+  offset: 115, 142
+  index: -1
+0034 shot
+  rotate: false
+  xy: 1718, 570
+  size: 427, 279
+  orig: 654, 654
+  offset: 114, 141
+  index: -1
+0036 shot
+  rotate: false
+  xy: 1724, 8
+  size: 427, 279
+  orig: 654, 654
+  offset: 114, 141
+  index: -1
+0038 shot
+  rotate: false
+  xy: 867, 289
+  size: 428, 279
+  orig: 654, 654
+  offset: 114, 141
+  index: -1
+0040 shot
+  rotate: false
+  xy: 1288, 570
+  size: 428, 279
+  orig: 654, 654
+  offset: 114, 141
+  index: -1
