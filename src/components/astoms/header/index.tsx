@@ -41,7 +41,7 @@ const Header: React.FC = () => {
           </NavLink>
         </div>
       </div>
-      {/* <p className={`${classes.logo}`}><NavLink to="/"><img src="https://marketplace-wine.vercel.app/assets/logo.png" alt="logo" /></NavLink></p> */}
+      {/* <p className={`${classes.logo}`}><NavLink to="/"><img src="./assets/logo.png" alt="logo" /></NavLink></p> */}
     </header>
   );
 };

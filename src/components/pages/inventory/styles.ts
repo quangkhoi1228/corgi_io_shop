@@ -466,7 +466,7 @@ const useStyles = makeStyles((theme: Theme) =>
         "&::after": {
           position: "absolute",
           content: "none",
-          background: "url(https://marketplace-wine.vercel.app/assets/bg_rating.png) center no-repeat",
+          background: "url(./assets/bg_rating.png) center no-repeat",
           backgroundSize: "cover",
           width: 64,
           height: 81,

@@ -83,7 +83,7 @@ const Inventory: React.FC = () => {
     for (let index = 0; index < el; index++) {
       arrayStar.push(
         <li key={index}>
-          <img src="https://marketplace-wine.vercel.app/assets/icon_rating_md.png" alt="star" />
+          <img src="./assets/icon_rating_md.png" alt="star" />
         </li>
       );
     }
@@ -131,14 +131,14 @@ const Inventory: React.FC = () => {
       <div className={`${classes.listItemInfor} item-item`} key={el.id}>
         {/* <Link to={`${itemCate}${el.id}`} className="detail"></Link> */}
         <p className={`${classes.itemBackGround}`}>
-          <img src="https://marketplace-wine.vercel.app/assets/bg_item.png" alt="background item" />
+          <img src="./assets/bg_item.png" alt="background item" />
         </p>
         <div className={`${classes.itemContent}`}>
           <ul className={`${classes.itemClassAndLevel}`}>
             {typeof el.class !== "undefined" ? (
               <li className={`${classes.itemClass}`}>
                 <img
-                  src={`https://marketplace-wine.vercel.app/assets/${el.class.toLowerCase()}.png`}
+                  src={`./assets/${el.class.toLowerCase()}.png`}
                   alt={el.class.toLowerCase()}
                 />
               </li>
@@ -147,7 +147,7 @@ const Inventory: React.FC = () => {
             )}
             {el.level ? (
               <li className={`${classes.itemlevel}`}>
-                <img src="https://marketplace-wine.vercel.app/assets/icon_level.png" alt="lever" />
+                <img src="./assets/icon_level.png" alt="lever" />
                 <span>{el.level}</span>
               </li>
             ) : (
@@ -158,13 +158,13 @@ const Inventory: React.FC = () => {
           <div className={`${classes.itemFocusItem}`}>
             {typeof el.class !== "undefined" ? (
               <BannerSpine
-                link={`https://marketplace-wine.vercel.app/animation/${infoClass}/${infoClass}.json`}
+                link={`https://github.com/quangkhoi1228/corgi_io_shop/blob/master/public/animation/${infoClass}/${infoClass}.json`}
                 name="banner"
               ></BannerSpine>
             ) : (
-              // <p className={`${classes.itemCricle}`}><img src={`https://marketplace-wine.vercel.app/assets/circle_${el.class.toLowerCase()}.png`} alt={`${el.class.toLowerCase()} cricle`} /></p>
+              // <p className={`${classes.itemCricle}`}><img src={`./assets/circle_${el.class.toLowerCase()}.png`} alt={`${el.class.toLowerCase()} cricle`} /></p>
               <p>
-                <img src={`https://marketplace-wine.vercel.app/assets/circle_under.png`} alt={`cricle`} />
+                <img src={`./assets/circle_under.png`} alt={`cricle`} />
               </p>
             )}
 

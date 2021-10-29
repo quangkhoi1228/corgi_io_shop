@@ -37,7 +37,7 @@ const Detail: React.FC = () => {
   const handleRenderStar = () => {
     const arrayStar = [];
     for (let index = 0; index < dataItem.star; index++) {
-      arrayStar.push(<span key={index}><img src="https://marketplace-wine.vercel.app/assets/icon_rating_md.png" alt="star" /></span>)
+      arrayStar.push(<span key={index}><img src="./assets/icon_rating_md.png" alt="star" /></span>)
     }
     return arrayStar;
   }
@@ -78,9 +78,9 @@ const Detail: React.FC = () => {
           <div className={`${classes.detLeft}`}>
             <p className={`${classes.detID}`}>ID: #{dataItem.id}</p>
             <div className={`${classes.detImage}`}>
-              {/* <p><img src="https://marketplace-wine.vercel.app/assets/wind_big.svg" alt="wind" /></p> */}
+              {/* <p><img src="./assets/wind_big.svg" alt="wind" /></p> */}
               <BannerSpine
-              link={`https://marketplace-wine.vercel.app/animation/${infoClass}/${infoClass}.json`}
+              link={`https://github.com/quangkhoi1228/corgi_io_shop/blob/master/public/animation/${infoClass}/${infoClass}.json`}
               name="banner"
               ></BannerSpine>
               <p className={`${classes.detItem}`}><img src={url + dataItem.img} alt="item" /></p>
@@ -91,7 +91,7 @@ const Detail: React.FC = () => {
               {activate}
             </Web3ReactProvider> */}
             <p className={`${classes.detText}`}>Owner: <a href={`https://bscscan.com/address/${addressOwn}`} target="_blank">{addressOwn.slice(0, 7) + '...' }</a></p>
-            <p><img src="https://marketplace-wine.vercel.app/assets/bg_line_large.png" alt="line" /></p>
+            <p><img src="./assets/bg_line_large.png" alt="line" /></p>
             <p className={`${classes.detTitle}`}>Stats</p>
             <ul className={`${classes.detInfo}`}>
               <li>HP: {dataItem.hp}</li>
@@ -104,11 +104,11 @@ const Detail: React.FC = () => {
                 {(handleRenderStar())}
               </li>
             </ul>
-            <p><img src="https://marketplace-wine.vercel.app/assets/bg_line_large.png" alt="line" /></p>
+            <p><img src="./assets/bg_line_large.png" alt="line" /></p>
             <p className={`${classes.detTitle}`}>Current price</p>
             <p className={`${classes.detPrice}`}>{dataItem.price} COR</p>
             <p className={`${classes.detButton}`}>
-              <img src="https://marketplace-wine.vercel.app/assets/button_green.svg" alt="Buy now" />
+              <img src="./assets/button_green.svg" alt="Buy now" />
               <span>Buy now</span>
             </p>
           </div>

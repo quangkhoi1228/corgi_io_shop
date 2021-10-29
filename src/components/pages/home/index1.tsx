@@ -59,7 +59,7 @@ const Home: React.FC = () => {
   const handleRenderStar = (el: number) => {
     const arrayStar = [];
     for (let index = 0; index < el; index++) {
-      arrayStar.push(<li key={index}><img src="https://marketplace-wine.vercel.app/assets/icon_rating_md.png" alt="star" /></li>)
+      arrayStar.push(<li key={index}><img src="./assets/icon_rating_md.png" alt="star" /></li>)
     }
     return arrayStar;
   }
@@ -94,23 +94,23 @@ const Home: React.FC = () => {
     return (
       <div className={`${classes.listItemInfor}`} key={el.id}>
         <Link to={`${itemCate}${el.id}`} className="detail"></Link>
-        <p className={`${classes.itemBackGround}`}><img src="https://marketplace-wine.vercel.app/assets/bg_item.png" alt="background item" /></p>
+        <p className={`${classes.itemBackGround}`}><img src="./assets/bg_item.png" alt="background item" /></p>
         <div className={`${classes.itemContent}`}>
           <ul className={`${classes.itemClassAndLevel}`}>
-            {typeof el.class !== 'undefined' ? <li className={`${classes.itemClass}`}><img src={`https://marketplace-wine.vercel.app/assets/${el.class.toLowerCase()}.png`} alt={el.class.toLowerCase()} /></li> : ''}
-            {el.level ? <li className={`${classes.itemlevel}`}><img src="https://marketplace-wine.vercel.app/assets/icon_level.png" alt="lever" /><span>{el.level}</span></li> : ''}
+            {typeof el.class !== 'undefined' ? <li className={`${classes.itemClass}`}><img src={`./assets/${el.class.toLowerCase()}.png`} alt={el.class.toLowerCase()} /></li> : ''}
+            {el.level ? <li className={`${classes.itemlevel}`}><img src="./assets/icon_level.png" alt="lever" /><span>{el.level}</span></li> : ''}
           </ul>
           <p className={`${classes.itemID}`}>{el.id}</p>
           <div className={`${classes.itemFocusItem}`}>
             {
               typeof el.class !== 'undefined' ? 
               <BannerSpine
-                link={`https://marketplace-wine.vercel.app/animation/${infoClass}/${infoClass}.json`}
+                link={`https://github.com/quangkhoi1228/corgi_io_shop/blob/master/public/animation/${infoClass}/${infoClass}.json`}
                 name="banner"
               ></BannerSpine>
-              // <p className={`${classes.itemCricle}`}><img src={`https://marketplace-wine.vercel.app/assets/circle_${el.class.toLowerCase()}.png`} alt={`${el.class.toLowerCase()} cricle`} /></p> 
+              // <p className={`${classes.itemCricle}`}><img src={`./assets/circle_${el.class.toLowerCase()}.png`} alt={`${el.class.toLowerCase()} cricle`} /></p> 
               : 
-              <p><img src={`https://marketplace-wine.vercel.app/assets/circle_under.png`} alt={`cricle`} /></p> 
+              <p><img src={`./assets/circle_under.png`} alt={`cricle`} /></p> 
             }
             
             <p className={`${classes.itemImage}`}><img src={url + el.img} alt="item" /></p>
@@ -222,7 +222,7 @@ const Home: React.FC = () => {
                 min_price: '',
                 max_price: '',
               })
-            }}><img src={`https://marketplace-wine.vercel.app/assets/button_${itemCate === '/pets/' ? 'blue' : 'purple'}_strong.svg`} alt="Character" /><span>Character</span></li>
+            }}><img src={`./assets/button_${itemCate === '/pets/' ? 'blue' : 'purple'}_strong.svg`} alt="Character" /><span>Character</span></li>
             <li onClick={() => {
               setItemCate('/items/')
               setPagi('0')
@@ -233,7 +233,7 @@ const Home: React.FC = () => {
                 min_price: '',
                 max_price: '',
               })
-            }}><img src={`https://marketplace-wine.vercel.app/assets/button_${itemCate === '/items/' ? 'blue' : 'purple'}_strong.svg`} alt="Item" /><span>Item</span></li>
+            }}><img src={`./assets/button_${itemCate === '/items/' ? 'blue' : 'purple'}_strong.svg`} alt="Item" /><span>Item</span></li>
             <li onClick={() => {
               setItemCate('/lands/')
               setPagi('0')
@@ -244,7 +244,7 @@ const Home: React.FC = () => {
                 min_price: '',
                 max_price: '',
               })
-            }}><img src={`https://marketplace-wine.vercel.app/assets/button_${itemCate === '/lands/' ? 'blue' : 'purple'}_strong.svg`} alt="Land" /><span>Land</span></li>
+            }}><img src={`./assets/button_${itemCate === '/lands/' ? 'blue' : 'purple'}_strong.svg`} alt="Land" /><span>Land</span></li>
             <li onClick={() => {
               setItemCate('/builders/')
               setPagi('0')
@@ -255,7 +255,7 @@ const Home: React.FC = () => {
                 min_price: '',
                 max_price: '',
               })
-            }}><img src={`https://marketplace-wine.vercel.app/assets/button_${itemCate === '/builders/' ? 'blue' : 'purple'}_strong.svg`} alt="Building" /><span>Building</span></li>
+            }}><img src={`./assets/button_${itemCate === '/builders/' ? 'blue' : 'purple'}_strong.svg`} alt="Building" /><span>Building</span></li>
           </ul>
           <ul className={`${classes.listSort}`}>
             <li>{`${dataItem.meta.count} ${itemCate === '/pets/' ? 'Chars' : itemCate === '/items/' ? 'Items' : itemCate === '/lands/' ? 'Lands' : itemCate === '/builders/' ? 'Builders' : ''}`}</li>
@@ -357,7 +357,7 @@ const Home: React.FC = () => {
                     star: '1'
                   });
                 }}
-              ><img src="https://marketplace-wine.vercel.app/assets/icon_rating_lg.png" alt="Rating" /><span>1</span></li>
+              ><img src="./assets/icon_rating_lg.png" alt="Rating" /><span>1</span></li>
               <li
                 className={filterParams.star === '2' ? 'active' : ''}
                 onClick={() => {
@@ -366,7 +366,7 @@ const Home: React.FC = () => {
                     star: '2'
                   });
                 }}
-              ><img src="https://marketplace-wine.vercel.app/assets/icon_rating_lg.png" alt="Rating" /><span>2</span></li>
+              ><img src="./assets/icon_rating_lg.png" alt="Rating" /><span>2</span></li>
               <li
                 className={filterParams.star === '3' ? 'active' : ''}
                 onClick={() => {
@@ -375,7 +375,7 @@ const Home: React.FC = () => {
                     star: '3'
                   });
                 }}
-              ><img src="https://marketplace-wine.vercel.app/assets/icon_rating_lg.png" alt="Rating" /><span>3</span></li>
+              ><img src="./assets/icon_rating_lg.png" alt="Rating" /><span>3</span></li>
               <li
                 className={filterParams.star === '4' ? 'active' : ''}
                 onClick={() => {
@@ -384,7 +384,7 @@ const Home: React.FC = () => {
                     star: '4'
                   });
                 }}
-              ><img src="https://marketplace-wine.vercel.app/assets/icon_rating_lg.png" alt="Rating" /><span>4</span></li>
+              ><img src="./assets/icon_rating_lg.png" alt="Rating" /><span>4</span></li>
               <li
                 className={filterParams.star === '5' ? 'active' : ''}
                 onClick={() => {
@@ -393,9 +393,9 @@ const Home: React.FC = () => {
                     star: '5'
                   });
                 }}
-              ><img src="https://marketplace-wine.vercel.app/assets/icon_rating_lg.png" alt="Rating" /><span>5</span></li>
+              ><img src="./assets/icon_rating_lg.png" alt="Rating" /><span>5</span></li>
             </ul>
-            <p className={`${classes.filterLine}`}><img src="https://marketplace-wine.vercel.app/assets/bg_line_short.svg" alt="Line" /></p>
+            <p className={`${classes.filterLine}`}><img src="./assets/bg_line_short.svg" alt="Line" /></p>
             <p className={`${classes.filterTitle}`}>Element</p>
             <ul className={`${classes.filterClass}`}>
               <li
@@ -406,7 +406,7 @@ const Home: React.FC = () => {
                   });
                 }}
                 className={filterParams.class === 'Earth' ? 'active' : ''}
-              ><span><img src="https://marketplace-wine.vercel.app/assets/earth.png" alt="Earth" /></span>Earth</li>
+              ><span><img src="./assets/earth.png" alt="Earth" /></span>Earth</li>
               <li
                 onClick={() => {
                   setFilterParams({
@@ -415,7 +415,7 @@ const Home: React.FC = () => {
                   });
                 }}
                 className={filterParams.class === 'Water' ? 'active' : ''}
-              ><span><img src="https://marketplace-wine.vercel.app/assets/water.png" alt="Water" /></span>Water</li>
+              ><span><img src="./assets/water.png" alt="Water" /></span>Water</li>
               <li
                 onClick={() => {
                   setFilterParams({
@@ -424,7 +424,7 @@ const Home: React.FC = () => {
                   });
                 }}
                 className={filterParams.class === 'Fire' ? 'active' : ''}
-              ><span><img src="https://marketplace-wine.vercel.app/assets/fire.png" alt="Fire" /></span>Fire</li>
+              ><span><img src="./assets/fire.png" alt="Fire" /></span>Fire</li>
               <li
                 onClick={() => {
                   setFilterParams({
@@ -433,7 +433,7 @@ const Home: React.FC = () => {
                   });
                 }}
                 className={filterParams.class === 'Wind' ? 'active' : ''}
-              ><span><img src="https://marketplace-wine.vercel.app/assets/wind.png" alt="Wind" /></span>Wind</li>
+              ><span><img src="./assets/wind.png" alt="Wind" /></span>Wind</li>
             </ul>
             <p className={`${classes.filterTitle}`}>Price range</p>
             
@@ -452,7 +452,7 @@ const Home: React.FC = () => {
               </ul>
             </div>
             <p className={`${classes.filterButton}`} onClick={handleFilterButtonOnClick}>
-              <img src="https://marketplace-wine.vercel.app/assets/button_blue_big.svg" alt="Filter Button" />
+              <img src="./assets/button_blue_big.svg" alt="Filter Button" />
               <span>Filter</span>
             </p>
           </div>

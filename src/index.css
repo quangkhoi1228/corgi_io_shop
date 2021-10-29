@@ -28,8 +28,8 @@ body {
   color: #fff;
   font-size: 16px;
   background:
-    url('https://marketplace-wine.vercel.app/assets/bg_color.png') center top no-repeat,
-    url('https://marketplace-wine.vercel.app/assets/bg_img.png') center top no-repeat;
+    url('./assets/bg_color.png') center top no-repeat,
+    url('./assets/bg_img.png') center top no-repeat;
   background-size: cover, cover;
   /* font-family: 'Bebas Neue', cursive; */
   font-family: 'Montserrat', sans-serif;
@@ -68,8 +68,8 @@ body {
   body {
     font-size: 14px;
     background:
-      url('https://marketplace-wine.vercel.app/assets/bg_color.png') center top no-repeat,
-      url('https://marketplace-wine.vercel.app/assets/bg_img.png') center top no-repeat;
+      url('./assets/bg_color.png') center top no-repeat,
+      url('./assets/bg_img.png') center top no-repeat;
     background-size: cover, 150% auto;
   }
 

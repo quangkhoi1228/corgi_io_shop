@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
       top: '0',
       left: '50%',
       mixBlendMode: 'overlay',
-      background: 'url(https://marketplace-wine.vercel.app/assets/bg_header.png) center no-repeat',
+      background: 'url(./assets/bg_header.png) center no-repeat',
       backgroundSize: 'cover',
       width: 993,
       height: 174,

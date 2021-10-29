@@ -20,7 +20,7 @@ const ConnectWallet = () => {
     <>
     {
       typeof account === 'undefined' ? (
-      <p className="buttonConnect" onClick={() => connectWallet('metamask')}><img src="https://marketplace-wine.vercel.app/assets/button_purple.svg" alt="Connect" /><span className="buttonText">Connect</span></p>
+      <p className="buttonConnect" onClick={() => connectWallet('metamask')}><img src="./assets/button_purple.svg" alt="Connect" /><span className="buttonText">Connect</span></p>
       ) : <p className="addressWallet">{account?.slice(0, 6) + '...' + account?.slice(-4)}</p>
       }
     </>
