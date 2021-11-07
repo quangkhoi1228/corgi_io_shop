@@ -17,7 +17,7 @@ const routes: Routes[] = [
   {
     title: "Home",
     path: "/page/:id",
-    LoadComponent: lazy(() => import("components/pages/home")),
+    LoadComponent: lazy(() => import("components/pages/home/index")),
     exact: true,
   },
   {
@@ -47,7 +47,7 @@ const routes: Routes[] = [
   {
     title: "Home",
     path: "/",
-    LoadComponent: lazy(() => import("components/pages/home")),
+    LoadComponent: lazy(() => import("components/pages/home/index")),
     exact: true,
   },
 ];

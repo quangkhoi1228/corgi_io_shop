@@ -1,16 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useStyles from "./styles";
 import { Slider } from "@material-ui/core";
 import { useParams } from "react-router";
 import axios from "axios";
 import BannerSpineEgg from "components/astoms/banner/BannerSpineEgg";
+import { useWeb3React, Web3ReactProvider } from "@web3-react/core";
+import { useShopContract } from "../../../hooks/useContracts";
+import { Web3Provider } from "@ethersproject/providers";
 type urlParams = {
   id: string;
 };
+
+type IProps = {
+  children: ReactNode;
+};
+
+function getLibrary(provider: any): Web3Provider {
+  const library = new Web3Provider(provider);
+  library.pollingInterval = 12000;
+  return library;
+}
+
 const Home: React.FC = () => {
   const addressOwn = "0x7972d53c50aacb0e39ff98a5351f04631bffbeac";
   const url = `http://dev-coin.yangyinhouse.com`;
+  const addressShop = "0x19C38084692FE52EC6E1dAff8Fd348bE6511CF46";
+  const addressItem = "0xe0D509c9459F17EC95e90CBcc65f81D43F3A5b8a";
+  const addressPet = "0xBE9aF93062e414E5c11c62586F2Fc84Fb7783047";
+
+  const { account } = useWeb3React();
+
+  const shopContract = useShopContract(addressShop);
+
   const classes = useStyles();
   const { id } = useParams<urlParams>();
   const [pagi, setPagi] = useState(id);
@@ -119,10 +141,7 @@ const Home: React.FC = () => {
           <ul className={`${classes.itemClassAndLevel}`}>
             {typeof el.class !== "undefined" ? (
               <li className={`${classes.itemClass}`}>
-                <img
-                  src={`./assets/${el.class.toLowerCase()}.png`}
-                  alt={el.class.toLowerCase()}
-                />
+                <img src={`./assets/${el.class.toLowerCase()}.png`} alt={el.class.toLowerCase()} />
               </li>
             ) : (
               ""
@@ -369,31 +388,33 @@ const Home: React.FC = () => {
   // }, [filterParams])
 
   return (
-    <div className={`${classes.root}`}>
-      <div className={`${classes.container}`}>
-        <section className="single-egg-section">
-          <p className="section-title">Eggs</p>
-          <div className={`${classes.listItem} list egg-list`}>
-            {dataSingleEggItem.map((el: any) => handleRenderSingleEggItem(el))}
-          </div>
-        </section>
-        <section className="combo-egg-section">
-          <div className={`${classes.listItem} list egg-list`}>
-            {dataComboEggItem.map((el: any) => handleRenderComboEggItem(el))}
-          </div>
-        </section>
-        <section className="items-section">
-          <p className="section-title">
-            Items<span>random</span>
-          </p>
-          <section className="combo-item-section">
-            <div className={`${classes.listItem} list item-list`}>
-              {dataComboItemItem.map((el: any) => handleRenderComboItemItem(el))}
+    <Web3ReactProvider getLibrary={getLibrary}>
+      <div className={`${classes.root}`}>
+        <div className={`${classes.container}`}>
+          <section className="single-egg-section">
+            <p className="section-title">Eggs</p>
+            <div className={`${classes.listItem} list egg-list`}>
+              {dataSingleEggItem.map((el: any) => handleRenderSingleEggItem(el))}
             </div>
           </section>
-        </section>
+          <section className="combo-egg-section">
+            <div className={`${classes.listItem} list egg-list`}>
+              {dataComboEggItem.map((el: any) => handleRenderComboEggItem(el))}
+            </div>
+          </section>
+          <section className="items-section">
+            <p className="section-title">
+              Items<span>random</span>
+            </p>
+            <section className="combo-item-section">
+              <div className={`${classes.listItem} list item-list`}>
+                {dataComboItemItem.map((el: any) => handleRenderComboItemItem(el))}
+              </div>
+            </section>
+          </section>
+        </div>
       </div>
-    </div>
+    </Web3ReactProvider>
   );
 };
 
