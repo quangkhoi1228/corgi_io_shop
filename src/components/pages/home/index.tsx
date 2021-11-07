@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useStyles from "./styles";
 import { Slider } from "@material-ui/core";
@@ -6,8 +6,10 @@ import { useParams } from "react-router";
 import axios from "axios";
 import BannerSpineEgg from "components/astoms/banner/BannerSpineEgg";
 import { useWeb3React, Web3ReactProvider } from "@web3-react/core";
-import { useShopContract } from "../../../hooks/useContracts";
+import { useERC20, useShopContract } from "../../../hooks/useContracts";
 import { Web3Provider } from "@ethersproject/providers";
+import { useApprove } from "../../../hooks/useApprove";
+import { AppConfig } from "utils/AppConfig";
 type urlParams = {
   id: string;
 };
@@ -25,9 +27,10 @@ function getLibrary(provider: any): Web3Provider {
 const Home: React.FC = () => {
   const addressOwn = "0x7972d53c50aacb0e39ff98a5351f04631bffbeac";
   const url = `http://dev-coin.yangyinhouse.com`;
-  const addressShop = "0x19C38084692FE52EC6E1dAff8Fd348bE6511CF46";
+  const addressShop = "0xce72595E882C7FeeeDBB6e4ac521807fB7E61B3c";
   const addressItem = "0xe0D509c9459F17EC95e90CBcc65f81D43F3A5b8a";
   const addressPet = "0xBE9aF93062e414E5c11c62586F2Fc84Fb7783047";
+  const addressCor = "0xb914d049ae092b193ad9d728c8d80bf73b5292b0";
 
   const { account } = useWeb3React();
 
@@ -386,9 +389,31 @@ const Home: React.FC = () => {
   // useEffect(() => {
   //   console.log(filterParams);
   // }, [filterParams])
+  const corContract = useERC20(addressCor);
+  const { onApprove } = useApprove(corContract, shopContract, AppConfig.maxLimit);
+
+  const handleApprove = useCallback(async () => {
+    try {
+      const result = await onApprove();
+      console.log("result:", result);
+      if (result === 1) {
+        // setIsAllowance(true);
+        // toast.success("Approve Success");
+      } else {
+        // toast.error("Approve false");
+      }
+      // setRequestedApproval(false);
+    } catch (e) {
+      // console.log(e)
+      // toast.error(`Approve false: ${e} `);
+    }
+  }, [onApprove]);
 
   return (
     <Web3ReactProvider getLibrary={getLibrary}>
+      <button className="button" onClick={handleApprove}>
+        Button
+      </button>
       <div className={`${classes.root}`}>
         <div className={`${classes.container}`}>
           <section className="single-egg-section">

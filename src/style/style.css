@@ -1,6 +1,7 @@
 .button {
   cursor: pointer;
 }
+
 .button:hover {
   opacity: 0.8;
 }
@@ -14,15 +15,17 @@
 }
 
 * {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .header-root {
+  background: -webkit-gradient(linear, left top, left bottom, from(#081056), color-stop(70%, rgba(94, 34, 122, 0.92)), to(rgba(191, 51, 135, 0.85)));
   background: linear-gradient(to bottom, #081056, rgba(94, 34, 122, 0.92) 70%, rgba(191, 51, 135, 0.85));
   margin-bottom: 4rem;
   position: relative;
 }
+
 .header-root::after {
   position: absolute;
   content: "";
@@ -35,15 +38,19 @@
   background-size: cover;
   width: 993px;
   height: 174px;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
+
 .header-root .buttonConnect {
+  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   position: relative;
   padding: 1.25rem 0 0.75rem;
   cursor: pointer;
   z-index: 1;
 }
+
 @media screen and (max-width: 1023px) {
   .header-root .buttonConnect {
     cursor: pointer;
@@ -54,9 +61,11 @@
     font-size: 20px;
   }
 }
+
 .header-root .buttonConnect:hover {
   opacity: 0.8;
 }
+
 @media screen and (max-width: 768px) {
   .header-root {
     cursor: pointer;
@@ -64,75 +73,104 @@
     max-width: 125;
   }
 }
+
 .header-root .header-menu {
   position: relative;
   z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .header-root .header-menu a {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
 }
+
 .header-root .header-menu a:hover, .header-root .header-menu a.is-active {
   color: #3AAFEF;
 }
+
 .header-root .header-menu.is-mobile {
   display: none;
 }
+
 @media screen and (max-width: 768px) {
   .header-root .header-menu {
     display: none;
   }
   .header-root .header-menu.is-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 }
+
 .header-root .buttonText {
   top: 50%;
   left: 50%;
   display: inline-block;
   position: absolute;
   font-size: 28px;
-  transform: translate(-50%, -52%);
-  font-family: "Bebas Neue", cursive;
+  -webkit-transform: translate(-50%, -52%);
+          transform: translate(-50%, -52%);
+  font-family: 'Bebas Neue', cursive;
   font-weight: 400;
 }
+
 @media screen and (max-width: 768px) {
   .header-root .buttonText {
     font-size: 20px;
   }
 }
+
 .header-root .addressWallet {
   padding: 2.6567rem 0;
 }
+
 .header-root .header-container {
   max-width: 1305px;
   margin: auto 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 @media screen and (max-width: 768px) {
   .header-root .header-container {
     padding: 0 3%;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
+
 .header-root .logo {
   text-align: center;
   margin-top: -9rem;
   position: relative;
   margin-bottom: 2rem;
 }
+
 .header-root .logoMobile a, .header-root .logoMobile img {
   height: 5rem;
 }
+
 @media screen and (max-width: 1023px) {
   .header-root .logoMobile a, .header-root .logoMobile img {
     height: 3rem;
   }
 }
+
 .header-root .text {
   font-size: 18;
   margin-right: 2vw;
@@ -145,9 +183,10 @@
   padding: 0.75rem;
   font-size: 3rem;
   text-transform: uppercase;
-  font-family: "Bebas Neue";
+  font-family: 'Bebas Neue';
   font-weight: 400;
 }
+
 .section-title::after {
   content: "";
   position: absolute;
@@ -157,8 +196,10 @@
   bottom: 0;
   height: 3px;
   background: linear-gradient(232deg, rgba(13, 133, 183, 0) 0%, #0D85B7 52.6%, rgba(13, 133, 183, 0) 100%);
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
+
 .section-title > span {
   font-family: Montserrat;
   font-style: normal;
@@ -174,48 +215,63 @@
 }
 
 .list {
-  justify-content: space-between !important;
+  -webkit-box-pack: justify !important;
+      -ms-flex-pack: justify !important;
+          justify-content: space-between !important;
   max-width: 973px;
   margin: auto;
 }
+
 .list.is-large {
   max-width: 100%;
 }
+
 .list.is-large .egg-item, .list.is-large .item-item {
   width: 16%;
   margin-right: 0;
 }
+
 @media screen and (max-width: 1340px) {
   .list.is-large .egg-item {
     width: 30%;
   }
 }
+
 @media screen and (max-width: 768px) {
   .list.is-large .egg-item {
     width: 47%;
   }
 }
+
 @media screen and (max-width: 1340px) {
   .list.is-large .item-item {
     width: 170px;
   }
 }
+
 @media screen and (max-width: 768px) {
   .list.is-large .item-item {
     width: 170px;
   }
 }
+
 .list.is-large .item-item .detail {
   left: 0;
 }
+
 @media screen and (max-width: 1340px) {
   .list {
-    justify-content: center !important;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
   }
 }
+
 @media screen and (max-width: 768px) {
   .list {
-    justify-content: center !important;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
   }
 }
 
@@ -224,37 +280,47 @@
   text-align: center;
   padding-bottom: 3rem;
 }
+
 @media screen and (max-width: 768px) {
   .egg-item {
     width: 47%;
   }
 }
+
 .egg-item .egg-content {
   text-align: center;
   position: relative;
 }
+
 .egg-item .egg-content .egg-background {
   height: 10rem;
   position: relative;
   z-index: 2;
   padding-bottom: 2rem;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   margin-bottom: 1.5rem;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
+
 .egg-item .egg-content .egg-background.is-wind, .egg-item .egg-content .egg-background.is-water {
   height: 11rem;
   margin-bottom: 0.5rem;
 }
+
 .egg-item .egg-content .egg-counter {
   position: absolute;
   top: calc(10rem - 2rem);
   z-index: 1;
   height: 7rem;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   left: 50%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
+
 .egg-item .egg-content .shop-price {
   font-family: Montserrat;
   font-style: normal;
@@ -265,14 +331,17 @@
   color: #FFFFFF;
   margin-bottom: 1.5rem;
 }
+
 .egg-item .egg-content .shop-buy-button {
   position: relative;
 }
+
 .egg-item .egg-content .shop-buy-button span {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   font-family: Bebas Neue;
   font-style: normal;
   font-weight: normal;
@@ -284,16 +353,21 @@
 }
 
 .combo-egg-section .egg-list {
-  justify-content: center !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
 }
+
 .combo-egg-section .egg-list .egg-item {
   margin: 0 2rem;
 }
+
 .combo-egg-section .egg-list .egg-item .egg-background {
   height: 15rem;
   margin-bottom: 0;
   padding-bottom: 0.25rem;
 }
+
 .combo-egg-section .egg-list .egg-item .egg-combo-description {
   font-family: Montserrat;
   font-style: normal;
@@ -304,6 +378,7 @@
   color: #C4C4C4;
   margin-bottom: 0.5rem;
 }
+
 @media screen and (max-width: 768px) {
   .combo-egg-section .egg-list .egg-item {
     margin: 0;
@@ -315,37 +390,47 @@
   text-align: center;
   margin-bottom: 3rem;
 }
+
 @media screen and (max-width: 768px) {
   .item-item {
     width: 47%;
   }
 }
+
 .item-item .item-content {
   text-align: center;
   position: relative;
 }
+
 .item-item .item-content .item-background {
   height: 10rem;
   position: relative;
   z-index: 2;
   padding-bottom: 2rem;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   margin-bottom: 1.5rem;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
+
 .item-item .item-content .item-background.is-wind, .item-item .item-content .item-background.is-water {
   height: 11rem;
   margin-bottom: 0.5rem;
 }
+
 .item-item .item-content .item-counter {
   position: absolute;
   top: calc(10rem - 2rem);
   z-index: 1;
   height: 7rem;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   left: 50%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
+
 .item-item .item-content .shop-price {
   font-family: Montserrat;
   font-style: normal;
@@ -356,14 +441,17 @@
   color: #FFFFFF;
   margin-bottom: 1.5rem;
 }
+
 .item-item .item-content .shop-buy-button {
   position: relative;
 }
+
 .item-item .item-content .shop-buy-button span {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   font-family: Bebas Neue;
   font-style: normal;
   font-weight: normal;
@@ -375,16 +463,21 @@
 }
 
 .combo-item-section .item-list {
-  justify-content: center !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
 }
+
 .combo-item-section .item-list .item-item {
   margin: 0 2rem;
 }
+
 .combo-item-section .item-list .item-item .item-background {
   height: 15rem;
   margin-bottom: 0;
   padding-bottom: 0.25rem;
 }
+
 .combo-item-section .item-list .item-item .item-combo-description {
   font-family: Montserrat;
   font-style: normal;
@@ -395,6 +488,7 @@
   color: #C4C4C4;
   margin-bottom: 0.5rem;
 }
+
 @media screen and (max-width: 768px) {
   .combo-item-section .item-list .item-item {
     margin: 0;
@@ -412,31 +506,43 @@ canvas {
 }
 
 .tab-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 1rem;
 }
+
 .tab-section .button {
   position: relative;
   margin: 0 0.75rem;
 }
+
 .tab-section .button > span {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   padding-bottom: 0.5rem;
   font-family: Bebas Neue;
   font-style: normal;
   font-weight: normal;
   font-size: 26px;
   line-height: 31px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
   text-transform: uppercase;
   color: #FFFFFF;
 }
+
 @media screen and (max-width: 768px) {
   .tab-section .button > span {
     font-size: 1rem;
@@ -445,9 +551,14 @@ canvas {
 }
 
 .item-attribute-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 .item-attribute-description > div {
   font-family: Montserrat;
   font-style: normal;
@@ -457,11 +568,13 @@ canvas {
   margin: 0 5px;
   color: #FFFFFF;
 }
+
 @media screen and (max-width: 1340px) {
   .item-attribute-description > div {
     font-size: 0.75rem;
   }
 }
+
 @media screen and (max-width: 768px) {
   .item-attribute-description > div {
     font-size: 0.75rem;
@@ -475,22 +588,28 @@ canvas {
   top: 4rem;
   z-index: 10;
 }
+
 .egg-item:hover .hatch-container {
   display: block;
 }
+
 .hatch-container .hatch-button {
   position: relative;
 }
+
 .hatch-container .hatch-button:hover {
-  filter: brightness(1.25);
+  -webkit-filter: brightness(1.25);
+          filter: brightness(1.25);
   z-index: 10;
   opacity: 1;
 }
+
 .hatch-container .hatch-button span {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   font-family: Bebas Neue;
   font-style: normal;
   font-weight: normal;
@@ -501,5 +620,4 @@ canvas {
   padding-bottom: 0.5rem;
   width: 100%;
 }
-
 /*# sourceMappingURL=style.css.map */

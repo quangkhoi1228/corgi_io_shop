@@ -1,9 +1,10 @@
 import { ethers } from "ethers";
 
-
 import petAbi from "../config/abi/pet_abi.json";
 import itemAbi from "../config/abi/item_abi.json";
 import shopAbi from "../config/abi/shop_abi.json";
+import bep20Abi from "../config/abi/erc20.json";
+
 import { simpleRpcProvider } from "./providers";
 
 const getContract = (abi: any, address: string, signer?: ethers.Signer | ethers.providers.Provider) => {
@@ -23,9 +24,9 @@ export const getPetContract = (address: string, signer?: ethers.Signer | ethers.
   return getContract(petAbi, address, signer);
 };
 
-// export const getBep20Contract = (address: string, signer?: ethers.Signer | ethers.providers.Provider) => {
-//   return getContract(bep20Abi, address, signer);
-// };
+export const getBep20Contract = (address: string, signer?: ethers.Signer | ethers.providers.Provider) => {
+  return getContract(bep20Abi, address, signer);
+};
 
 // export const getClaimAirdropContract = (address: string, signer?: ethers.Signer | ethers.providers.Provider) => {
 //   return getContract(claimAirdropAbi, address, signer);

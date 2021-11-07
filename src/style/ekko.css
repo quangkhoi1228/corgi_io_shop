@@ -1,0 +1,16 @@
+.button {
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.is-invisible {
+  visibility: hidden;
+}
+/*# sourceMappingURL=ekko.css.map */
