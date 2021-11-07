@@ -7,17 +7,17 @@ import useWeb3Provider from "./useWeb3Provider";
 export const useShopContract = (address: string) => {
   const { library } = useWeb3Provider();
   // console.log("useERC20 => provider:", library.getSigner());
-  return useMemo(() => getShopContract(address, library.getSigner()), [address, library]);
+  return useMemo(() => getShopContract(address, library.getSigner ? library.getSigner(): null), [address, library]);
 };
 export const useItemContract = (address: string) => {
   const { library } = useWeb3Provider();
-  // console.log("useERC20 => provider:", library.getSigner());
-  return useMemo(() => getItemContract(address, library.getSigner()), [address, library]);
+  // console.log("useERC20 => provider:", library.getSigner ? library.getSigner(): null);
+  return useMemo(() => getItemContract(address, library.getSigner ? library.getSigner(): null), [address, library]);
 };
 export const usePetContract = (address: string) => {
   const { library } = useWeb3Provider();
-  // console.log("useERC20 => provider:", library.getSigner());
-  return useMemo(() => getPetContract(address, library.getSigner()), [address, library]);
+  // console.log("useERC20 => provider:", library.getSigner ? library.getSigner(): null);
+  return useMemo(() => getPetContract(address, library.getSigner ? library.getSigner(): null), [address, library]);
 };
 // export const useERC20 = (address: string) => {
 //   const { library } = useWeb3Provider();
