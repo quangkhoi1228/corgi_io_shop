@@ -17,11 +17,6 @@ type IProps = {
   children: ReactNode;
 };
 
-function getLibrary(provider: any): Web3Provider {
-  const library = new Web3Provider(provider);
-  library.pollingInterval = 12000;
-  return library;
-}
 
 const Inventory: React.FC = () => {
   const addressOwn = "0x7972d53c50aacb0e39ff98a5351f04631bffbeac";
@@ -379,41 +374,39 @@ const Inventory: React.FC = () => {
   // }, [filterParams])
 
   return (
-    <Web3ReactProvider getLibrary={getLibrary}>
-      <div className={`${classes.root}`}>
-        <div className={`${classes.container} `}>
-          <section className="tab-section">
-            <a className="button" data-tab="pets" onClick={handleChangeTab}>
-              <img
-                src={`/assets/button-background-${tabItem === "pets" ? "blue" : "purple"}.png`}
-                alt="button-background"
-              />
-              <span>Pets</span>{" "}
-            </a>
-            <a className="button" data-tab="items" onClick={handleChangeTab}>
-              <img
-                src={`/assets/button-background-${tabItem === "items" ? "blue" : "purple"}.png`}
-                alt="button-background"
-              />
-              <span>Items</span>
-            </a>
-          </section>
-          <section className={`single-egg-section  ${tabItem === "pets" ? "" : "is-hidden"}`}>
-            <p className="section-title">Eggs</p>
-            <div className={`${classes.listItem} list egg-list is-large`}>
-              {dataSingleEggItem.map((el: any) => handleRenderSingleEggItem(el))}
-            </div>
-          </section>
+    <div className={`${classes.root}`}>
+      <div className={`${classes.container} `}>
+        <section className="tab-section">
+          <a className="button" data-tab="pets" onClick={handleChangeTab}>
+            <img
+              src={`/assets/button-background-${tabItem === "pets" ? "blue" : "purple"}.png`}
+              alt="button-background"
+            />
+            <span>Pets</span>{" "}
+          </a>
+          <a className="button" data-tab="items" onClick={handleChangeTab}>
+            <img
+              src={`/assets/button-background-${tabItem === "items" ? "blue" : "purple"}.png`}
+              alt="button-background"
+            />
+            <span>Items</span>
+          </a>
+        </section>
+        <section className={`single-egg-section  ${tabItem === "pets" ? "" : "is-hidden"}`}>
+          <p className="section-title">Eggs</p>
+          <div className={`${classes.listItem} list egg-list is-large`}>
+            {dataSingleEggItem.map((el: any) => handleRenderSingleEggItem(el))}
+          </div>
+        </section>
 
-          <section className={`items-section ${tabItem === "items" ? "" : "is-hidden"}`}>
-            <p className="section-title">Items</p>
-            <div className={`${classes.listItem} list item-list is-large`}>
-              {dataItem.data.map((el: any) => handleRenderItem(el))}
-            </div>
-          </section>
-        </div>
+        <section className={`items-section ${tabItem === "items" ? "" : "is-hidden"}`}>
+          <p className="section-title">Items</p>
+          <div className={`${classes.listItem} list item-list is-large`}>
+            {dataItem.data.map((el: any) => handleRenderItem(el))}
+          </div>
+        </section>
       </div>
-    </Web3ReactProvider>
+    </div>
   );
 };
 

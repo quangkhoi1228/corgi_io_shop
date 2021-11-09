@@ -18,12 +18,6 @@ type IProps = {
   children: ReactNode;
 };
 
-function getLibrary(provider: any): Web3Provider {
-  const library = new Web3Provider(provider);
-  library.pollingInterval = 12000;
-  return library;
-}
-
 const Home: React.FC = () => {
   const addressOwn = "0x7972d53c50aacb0e39ff98a5351f04631bffbeac";
   const url = `http://dev-coin.yangyinhouse.com`;
@@ -33,6 +27,8 @@ const Home: React.FC = () => {
   const addressCor = "0xb914d049ae092b193ad9d728c8d80bf73b5292b0";
 
   const { account } = useWeb3React();
+
+  console.log("account", account);
 
   const shopContract = useShopContract(addressShop);
 
@@ -280,7 +276,7 @@ const Home: React.FC = () => {
         <Link to={`${itemCate}${el.id}`} className="detail"></Link>
         <div className="item-content">
           <img className="item-background " src={`./assets/combo-item-${combo}.png`} alt="item-background" />
-          <p className="item-combo-description">{combo} Eggs (random)</p>
+          <p className="item-combo-description">{combo} item</p>
           <div className="shop-price">100 COR</div>
           <p className="button shop-buy-button" onClick={onClick}>
             <img src="./assets/shop-buy-background-yellow.png" alt="button" />
@@ -390,6 +386,7 @@ const Home: React.FC = () => {
   //   console.log(filterParams);
   // }, [filterParams])
   const corContract = useERC20(addressCor);
+  console.log("log contract: ", corContract, shopContract);
   const { onApprove } = useApprove(corContract, shopContract, AppConfig.maxLimit);
 
   const handleApprove = useCallback(async () => {
@@ -404,16 +401,13 @@ const Home: React.FC = () => {
       }
       // setRequestedApproval(false);
     } catch (e) {
-      // console.log(e)
+      console.log(e);
       // toast.error(`Approve false: ${e} `);
     }
   }, [onApprove]);
 
   return (
-    <Web3ReactProvider getLibrary={getLibrary}>
-      <button className="button" onClick={handleApprove}>
-        Button
-      </button>
+    <>
       <div className={`${classes.root}`}>
         <div className={`${classes.container}`}>
           <section className="single-egg-section">
@@ -439,7 +433,7 @@ const Home: React.FC = () => {
           </section>
         </div>
       </div>
-    </Web3ReactProvider>
+    </>
   );
 };
 

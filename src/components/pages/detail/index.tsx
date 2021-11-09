@@ -87,9 +87,6 @@ const Detail: React.FC = () => {
             </div>
           </div>
           <div className={`${classes.detRight}`}>
-            {/* <Web3ReactProvider getLibrary={() => new Web3()}>
-              {activate}
-            </Web3ReactProvider> */}
             <p className={`${classes.detText}`}>Owner: <a href={`https://bscscan.com/address/${addressOwn}`} target="_blank">{addressOwn.slice(0, 7) + '...' }</a></p>
             <p><img src="./assets/bg_line_large.png" alt="line" /></p>
             <p className={`${classes.detTitle}`}>Stats</p>

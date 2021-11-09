@@ -10,6 +10,7 @@ export const useApprove = (mainContract: Contract, useContract: Contract, maxLim
       const receipt: any = await approved(mainContract, useContract, maxLimit);
       return receipt.status;
     } catch (e) {
+      console.log(e);
       return false;
     }
   }, [useContract, mainContract, maxLimit]);
